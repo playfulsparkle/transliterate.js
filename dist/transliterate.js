@@ -4,23 +4,7 @@
 !function () {
     'use strict';
 
-    const graphemeRegex = /([\uD800-\uDBFF][\uDC00-\uDFFF]|\uD83D[\uDC00-\uDEFF]|\uD83E[\uDC00-\uDEFF]|\p{RI}\p{RI}|\p{Emoji}(\p{EMod}|\uFE0F\u20E3?|[\u{1F3FB}-\u{1F3FF}]|\u200D\p{Emoji})*|[\p{L}\p{M}\p{N}][\p{M}]*|.)/gu;
-
     const validNorms = ['NFC', 'NFD', 'NFKC', 'NFKD'];
-
-    // Inline grapheme cluster splitter (simplified Intl.Segmenter replacement)
-    const splitGraphemes = (str) => {
-        const result = [];
-
-        let match;
-
-        // Ensure the regex has the global flag
-        while ((match = graphemeRegex.exec(str)) !== null) {
-            result.push(match[0]);
-        }
-
-        return result;
-    };
 
     const defaultMappings = {
         // Latin
@@ -2078,14 +2062,16 @@
     };
 
     function transliterate(text, normalization = 'NFD', useDefaultMapping = true, customMapping = null) {
+        if (typeof text !== 'string' || text.length === 0) {
+            return '';
+        }
+
         if (validNorms.indexOf(normalization) === -1) {
             throw new SyntaxError(`Invalid normalization: ${normalization}. Must be one of: ${validNorms.join(', ')}`);
         }
 
-        const graphemes = splitGraphemes(str);
-
         // Process each character
-        let normalized = Array.from(graphemes)
+        let normalized = Array.from(text)
             .map(char => {
                 if (customMapping !== null && customMapping[char]) {
                     return customMapping[char];
@@ -2093,6 +2079,10 @@
 
                 if (useDefaultMapping && defaultMappings[char]) {
                     return defaultMappings[char];
+                }
+
+                if (char.charCodeAt(0) > 127) {
+                    return '';
                 }
 
                 return char;
