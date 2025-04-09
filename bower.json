@@ -1,0 +1,29 @@
+{
+    "name": "transliterate.js",
+    "description": "Lightweight, Open Source library that converts accented, special & non-Latin characters into plain text - written in JavaScript.",
+    "version": "1.0.0",
+    "main": [
+        "dist/transliterate.min.js",
+        "dist/angular-transliterate.min.js"
+    ],
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "ascii",
+        "diacritics",
+        "accent",
+        "letter",
+        "alphabet",
+        "remove",
+        "replace",
+        "extension"
+    ],
+    "authors": [
+        "Zsolt Oroszlány <hello@playfulsparkle.com>"
+    ],
+    "homepage": "https://github.com/playfulsparkle/transliterate.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/playfulsparkle/transliterate.js.git"
+    },
+    "ignore": []
+}
