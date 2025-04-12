@@ -14,8 +14,7 @@
         "letter",
         "alphabet",
         "remove",
-        "replace",
-        "extension"
+        "replace"
     ],
     "authors": [
         "Zsolt Oroszlány <hello@playfulsparkle.com>"

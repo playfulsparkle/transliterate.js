@@ -22,8 +22,7 @@
         "letter",
         "alphabet",
         "remove",
-        "replace",
-        "extension"
+        "replace"
     ],
     "license": "BSD-3-Clause",
     "readmeFilename": "README.md",
