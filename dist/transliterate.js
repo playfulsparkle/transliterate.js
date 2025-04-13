@@ -1,4 +1,4 @@
-/*! @playfulsparkle/transliterate-js v1.0.1 | Copyright (c) 2025-present, Zsolt Oroszlány <hello@playfulsparkle.com> | BSD-3-Clause */
+/*! @playfulsparkle/transliterate-js v1.0.2 | Copyright (c) 2025-present, Zsolt Oroszlány <hello@playfulsparkle.com> | BSD-3-Clause */
 /* global window, exports, define */
 
 !function () {

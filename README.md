@@ -23,7 +23,13 @@ console.log(transliteratedText); // Output: eaieuco
 npm install @playfulsparkle/transliterate-js
 ```
 
-### Bower
+### Yarn
+
+```bash
+yarn add @playfulsparkle/transliterate-js
+```
+
+### Bower (deprecated)
 
 ```bash
 bower install playfulsparkle/transliterate.js
