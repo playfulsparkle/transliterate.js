@@ -1,0 +1,106 @@
+name: 🐞 Bug Report
+description: Create a report to help us improve the transliterate.js library
+title: "Bug Report Title"
+labels: []
+assignees:
+  - zsoltoroszlany82
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the details below to help us understand and fix the issue.
+
+  - type: textarea
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+      placeholder: e.g. transliterate() doesn't correctly handle character 'ẞ' with default settings, resulting in 'SS' instead of 'S'.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Provide the steps to reproduce the behavior. Include a minimal code snippet demonstrating the issue.
+      placeholder: |
+        1. Install the library: `npm install @playfulsparkle/transliterate-js`
+        2. Run the following code:
+           ```javascript
+           import { transliterate } from '@playfulsparkle/transliterate-js';
+
+           const inputString = 'Your input string with the problematic characters';
+           const normalizationForm = 'NFD'; // Or 'NFC', 'NFKC', 'NFKD', or leave empty for default
+           const useParams = true; // true/false based on your usage
+           const customMap = {}; // Provide your custom mapping object if used
+
+           const result = transliterate(inputString, normalizationForm, useParams, customMap);
+
+           console.log(result);
+           ```
+        3. Describe the observed output.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Input String
+      description: The exact input string you passed to the `transliterate` function.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Parameters Used
+      description: Specify the values used for the `normalization`, `useDefaultMapping`, and `customMapping` parameters in your `transliterate` call.
+      placeholder: e.g. normalization='NFD', useDefaultMapping=true, customMapping=null
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Observed Output
+      description: What was the actual output string returned by the `transliterate` function?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: What did you expect the output string to be?
+      placeholder: The output should have been "expected output string".
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Error Logs or Messages
+      description: If applicable, paste any error messages, console output, or stack traces here.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Screenshots or Video
+      description: If relevant, add screenshots or a video to help explain your problem. Drag and drop images or video files into this area.
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: transliterate.js Version
+      description: What version of transliterate.js are you using?
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Environment Details
+      description: Specify the environment where the bug occurs (Node.js or Browser). Include versions of Node.js, browser, and operating system.
+      placeholder: |
+        - Node.js version: v18.12.0
+        - Browser: Chrome 108, Firefox 105, Safari 16
+        - Operating System: macOS Ventura 13.0, Windows 11, Ubuntu 22.04
+    validations:
+      required: true
